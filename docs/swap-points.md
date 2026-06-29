@@ -55,4 +55,4 @@ jwt.strategy.ts
 refresh-token.repository.ts
 ```
 
-`IProviderAdapter` 인터페이스(`src/auth/interfaces/provider-adapter.interface.ts`)를 구현하기만 하면 됩니다.
+`IProviderAdapter` 인터페이스(`src/auth/interfaces/provider-adapter.interface.ts`)를 구현하기만 하면 됩니다
