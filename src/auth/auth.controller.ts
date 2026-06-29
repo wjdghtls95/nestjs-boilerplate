@@ -20,7 +20,7 @@ import { AuthService } from './auth.service';
 import { GoogleAuthGuard } from './guards/google-auth.guard';
 import { GoogleMobileReqDto } from './dto/google-mobile-req.dto';
 import { RefreshReqDto } from './dto/refresh-req.dto';
-import appConfig, { AppConfig } from '../config/app.config';
+import appConfigToken, { AppConfig } from '../config/app.config';
 import { UserProfileResponseDto } from '../user/dto/user-profile-res.dto';
 
 const REFRESH_TOKEN_COOKIE = 'refresh_token';
@@ -30,7 +30,7 @@ const REFRESH_TOKEN_COOKIE = 'refresh_token';
 export class AuthController {
   constructor(
     private readonly authService: AuthService,
-    @Inject(appConfig.KEY) private readonly appConfig: AppConfig,
+    @Inject(appConfigToken.KEY) private readonly appConfig: AppConfig,
   ) {}
 
   // ── Web OAuth ──────────────────────────────────────────────────────

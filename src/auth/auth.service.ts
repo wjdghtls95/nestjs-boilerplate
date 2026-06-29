@@ -7,8 +7,8 @@ import { addDays } from '@libs/common/utils/time.util';
 import { PRISMA_ERROR_CODES } from '@libs/common/constants/prisma-error.codes';
 import { DomainException } from '@libs/common/exceptions/domain.exception';
 import { DOMAIN_ERRORS } from '@libs/common/constants/errors/domain.errors';
-import jwtConfig, { JwtConfig } from '../config/jwt.config';
-import appConfig, { AppConfig } from '../config/app.config';
+import jwtConfigToken, { JwtConfig } from '../config/jwt.config';
+import appConfigToken, { AppConfig } from '../config/app.config';
 import { TokenPair } from './interfaces/token-pair.interface';
 import { UserRepository } from '../user/repositories/user.repository';
 import { RefreshTokenRepository } from './repositories/refresh-token.repository';
@@ -25,8 +25,8 @@ export class AuthService {
     private readonly userRepository: UserRepository,
     private readonly refreshTokenRepository: RefreshTokenRepository,
     private readonly jwtService: JwtService,
-    @Inject(jwtConfig.KEY) private readonly jwtConfig: JwtConfig,
-    @Inject(appConfig.KEY) private readonly appConfig: AppConfig,
+    @Inject(jwtConfigToken.KEY) private readonly jwtConfig: JwtConfig,
+    @Inject(appConfigToken.KEY) private readonly appConfig: AppConfig,
   ) {}
 
   // @Transactional() 없음: Prisma tx 안에서 P2002 catch 후 재쿼리 불가 (PostgreSQL tx aborted state)
